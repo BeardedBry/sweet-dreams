@@ -1,7 +1,5 @@
 extends Button
 
-onready var music: AudioStreamPlayer = $BGMusic
-
 
 func _on_StartButton_pressed() -> void:
 	# warning-ignore:return_value_discarded
