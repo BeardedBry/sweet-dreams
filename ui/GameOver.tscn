@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/BackToStartButton.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 154, 112 )
+
+[node name="Label" type="Label" parent="Node2D"]
+margin_left = -35.0
+margin_top = -22.0
+margin_right = 38.0
+margin_bottom = -8.0
+text = "Game Over"
+
+[node name="BackToStartButton" type="Button" parent="Node2D"]
+margin_left = -44.0
+margin_top = 7.0
+margin_right = 50.0
+margin_bottom = 27.0
+text = "Back To Start"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="Node2D/BackToStartButton" to="Node2D/BackToStartButton" method="_on_BackToStartButton_pressed"]
