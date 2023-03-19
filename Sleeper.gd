@@ -1,4 +1,9 @@
 extends StaticBody2D
 
-export onready var sprite = $Sprite
 
+export var sleeper: int = 0
+onready var sprite: Sprite = $Sprite
+
+
+func _ready() -> void:
+	sprite.frame = sleeper

@@ -76,6 +76,8 @@ position = Vector2( 112, 64 )
 
 [node name="Sleeper2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 176, 64 )
+sleeper = 1
 
 [node name="Sleeper3" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 240, 64 )
+sleeper = 2
