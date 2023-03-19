@@ -17,10 +17,11 @@ margin_bottom = -8.0
 text = "Game Over"
 
 [node name="BackToStartButton" type="Button" parent="Node2D"]
-margin_left = -44.0
-margin_top = 7.0
-margin_right = 50.0
-margin_bottom = 27.0
+margin_left = -23.0
+margin_top = 19.0
+margin_right = 71.0
+margin_bottom = 39.0
+rect_scale = Vector2( 0.5, 0.5 )
 text = "Back To Start"
 script = ExtResource( 1 )
 

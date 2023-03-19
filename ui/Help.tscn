@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sleeper.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/BackToStartButton.gd" type="Script" id=2]
+
+[node name="Help" type="Node2D"]
+position = Vector2( 0, 71 )
+
+[node name="SleeperHelp" type="Node2D" parent="."]
+position = Vector2( 50, 100 )
+
+[node name="Label" type="Label" parent="SleeperHelp"]
+margin_left = -19.0
+margin_top = -43.0
+margin_right = 59.0
+margin_bottom = 5.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Awake, you lose life"
+autowrap = true
+
+[node name="Sleeper" parent="SleeperHelp" instance=ExtResource( 1 )]
+sleep_stage = 3
+manual_sleep_stage = true
+
+[node name="SleeperHelp2" type="Node2D" parent="."]
+position = Vector2( 100, 100 )
+
+[node name="Label" type="Label" parent="SleeperHelp2"]
+margin_left = -19.0
+margin_top = -43.0
+margin_right = 59.0
+margin_bottom = 5.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Light sleep"
+autowrap = true
+
+[node name="Sleeper" parent="SleeperHelp2" instance=ExtResource( 1 )]
+sleep_stage = 2
+manual_sleep_stage = true
+
+[node name="SleeperHelp3" type="Node2D" parent="."]
+position = Vector2( 150, 100 )
+
+[node name="Label" type="Label" parent="SleeperHelp3"]
+margin_left = -19.0
+margin_top = -43.0
+margin_right = 59.0
+margin_bottom = 5.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Meduim Sleep"
+autowrap = true
+
+[node name="Sleeper" parent="SleeperHelp3" instance=ExtResource( 1 )]
+sleep_stage = 1
+manual_sleep_stage = true
+
+[node name="SleeperHelp4" type="Node2D" parent="."]
+position = Vector2( 200, 100 )
+
+[node name="Label" type="Label" parent="SleeperHelp4"]
+margin_left = -19.0
+margin_top = -43.0
+margin_right = 59.0
+margin_bottom = 5.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Deep sleep, one more hit kills"
+autowrap = true
+
+[node name="Sleeper" parent="SleeperHelp4" instance=ExtResource( 1 )]
+manual_sleep_stage = true
+
+[node name="SleeperHelp5" type="Node2D" parent="."]
+position = Vector2( 250, 100 )
+
+[node name="Label" type="Label" parent="SleeperHelp5"]
+margin_left = -19.0
+margin_top = -43.0
+margin_right = 59.0
+margin_bottom = 5.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Dead, you lose life"
+autowrap = true
+
+[node name="Sleeper" parent="SleeperHelp5" instance=ExtResource( 1 )]
+sleep_stage = 5
+manual_sleep_stage = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 108.0
+margin_top = -47.0
+margin_right = 214.0
+margin_bottom = -33.0
+rect_scale = Vector2( 0.75, 0.75 )
+text = "Sleeper Statuses"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 51.0
+margin_top = -16.0
+margin_right = 443.0
+margin_bottom = -2.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Bonk a sleeper to knock them to sleep or into a deeper sleep.
+You lose life over time if a sleeper is awake or dead."
+
+[node name="BackToStartButton" type="Button" parent="."]
+margin_left = 16.0
+margin_top = -51.0
+margin_right = 58.0
+margin_bottom = -31.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Back"
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="BackToStartButton" to="BackToStartButton" method="_on_BackToStartButton_pressed"]
