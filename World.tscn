@@ -1,8 +1,8 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/all_in_one.png" type="Texture" id=1]
-[ext_resource path="res://assets/guy.png" type="Texture" id=2]
-[ext_resource path="res://scripts/Player.gd" type="Script" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sleeper.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "all_in_one.png 0"
@@ -27,231 +27,6 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 3.0
-height = 4.0
-
-[sub_resource type="Animation" id=20]
-resource_name = "IdleDown"
-length = 0.1
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=19]
-resource_name = "IdleLeft"
-length = 0.1
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 8 ]
-}
-
-[sub_resource type="Animation" id=18]
-resource_name = "IdleRight"
-length = 0.1
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 4 ]
-}
-
-[sub_resource type="Animation" id=21]
-resource_name = "IdleUp"
-length = 0.1
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 12 ]
-}
-
-[sub_resource type="Animation" id=5]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 4 ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "WalkDown"
-length = 0.4
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1, 2, 3, 0 ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "WalkLeft"
-length = 0.4
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 9, 10, 11, 8 ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "WalkRight"
-length = 0.4
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 7, 4 ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "WalkUp"
-length = 0.4
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 13, 14, 15, 12 ]
-}
-
-[sub_resource type="AnimationNodeAnimation" id=22]
-animation = "IdleLeft"
-
-[sub_resource type="AnimationNodeAnimation" id=23]
-animation = "IdleDown"
-
-[sub_resource type="AnimationNodeAnimation" id=24]
-animation = "IdleRight"
-
-[sub_resource type="AnimationNodeAnimation" id=25]
-animation = "IdleUp"
-
-[sub_resource type="AnimationNodeStateMachine" id=26]
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=15]
-blend_point_0/node = SubResource( 22 )
-blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 23 )
-blend_point_1/pos = Vector2( 0, 1.1 )
-blend_point_2/node = SubResource( 24 )
-blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 25 )
-blend_point_3/pos = Vector2( 0, -1.1 )
-blend_point_4/node = SubResource( 26 )
-blend_point_4/pos = Vector2( 0, -1.1 )
-min_space = Vector2( -1, -1.1 )
-max_space = Vector2( 1, 1.1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id=11]
-animation = "WalkLeft"
-
-[sub_resource type="AnimationNodeAnimation" id=12]
-animation = "WalkDown"
-
-[sub_resource type="AnimationNodeAnimation" id=13]
-animation = "WalkRight"
-
-[sub_resource type="AnimationNodeAnimation" id=14]
-animation = "WalkUp"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=10]
-blend_point_0/node = SubResource( 11 )
-blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 12 )
-blend_point_1/pos = Vector2( 0, 1.1 )
-blend_point_2/node = SubResource( 13 )
-blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 14 )
-blend_point_3/pos = Vector2( 0, -1.1 )
-min_space = Vector2( -1, -1.1 )
-max_space = Vector2( 1, 1.1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
-
-[sub_resource type="AnimationNodeStateMachine" id=3]
-states/Idle/node = SubResource( 15 )
-states/Idle/position = Vector2( 334, 103 )
-states/Run/node = SubResource( 10 )
-states/Run/position = Vector2( 509, 103 )
-transitions = [ "Idle", "Run", SubResource( 16 ), "Run", "Idle", SubResource( 17 ) ]
-start_node = "Idle"
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=27]
-
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 7.5, 120 )
 
@@ -274,60 +49,27 @@ cell_tile_origin = 1
 format = 1
 tile_data = PoolIntArray( -1, 0, 1179648, -65536, 0, 1179649, -65535, 0, 1179649, -65534, 0, 1179649, -65533, 0, 1179649, -65532, 0, 1179649, -65531, 0, 1179649, -65530, 0, 1179649, -65529, 0, 1179649, -65528, 0, 1179649, -65527, 0, 1179649, -65526, 0, 1179649, -65525, 0, 1179649, -65524, 0, 1179649, -65523, 0, 1179649, -65522, 0, 1179649, -65521, 0, 1179649, -65520, 0, 1179649, -65519, 0, 1179649, -65518, 0, 1179650, 65535, 0, 1245186, 0, 0, 786432, 1, 0, 786433, 2, 0, 786433, 3, 0, 786433, 4, 0, 786433, 5, 0, 786433, 6, 0, 786433, 7, 0, 786433, 8, 0, 786433, 9, 0, 786433, 10, 0, 786433, 11, 0, 786433, 12, 0, 786433, 13, 0, 786433, 14, 0, 786433, 15, 0, 786433, 16, 0, 786433, 17, 0, 786434, 18, 0, 1245184, 131071, 0, 1245186, 65536, 0, 851968, 65537, 0, 851969, 65538, 0, 851969, 65539, 0, 851969, 65540, 0, 851969, 65541, 0, 851969, 65542, 0, 851969, 65543, 0, 851969, 65544, 0, 851969, 65545, 0, 851969, 65546, 0, 851969, 65547, 0, 851969, 65548, 0, 851969, 65549, 0, 851969, 65550, 0, 851969, 65551, 0, 851969, 65552, 0, 851969, 65553, 0, 851970, 65554, 0, 1245184, 196607, 0, 1245186, 131072, 0, 851968, 131073, 0, 851969, 131074, 0, 851969, 131075, 0, 851969, 131076, 0, 851969, 131077, 0, 851969, 131078, 0, 851969, 131079, 0, 851969, 131080, 0, 851969, 131081, 0, 851969, 131082, 0, 851969, 131083, 0, 851969, 131084, 0, 851969, 131085, 0, 851969, 131086, 0, 851969, 131087, 0, 851969, 131088, 0, 851969, 131089, 0, 851970, 131090, 0, 1245184, 262143, 0, 1245186, 196608, 0, 851968, 196609, 0, 851969, 196610, 0, 851969, 196611, 0, 851969, 196612, 0, 851969, 196613, 0, 851969, 196614, 0, 851969, 196615, 0, 851969, 196616, 0, 851969, 196617, 0, 851969, 196618, 0, 851969, 196619, 0, 851969, 196620, 0, 851969, 196621, 0, 851969, 196622, 0, 851969, 196623, 0, 851969, 196624, 0, 851969, 196625, 0, 851970, 196626, 0, 1245184, 327679, 0, 1245186, 262144, 0, 851968, 262145, 0, 851969, 262146, 0, 851969, 262147, 0, 851969, 262148, 0, 851969, 262149, 0, 851969, 262150, 0, 851969, 262151, 0, 851969, 262152, 0, 851969, 262153, 0, 851969, 262154, 0, 851969, 262155, 0, 851969, 262156, 0, 851969, 262157, 0, 851969, 262158, 0, 851969, 262159, 0, 851969, 262160, 0, 851969, 262161, 0, 851970, 262162, 0, 1245184, 393215, 0, 1245186, 327680, 0, 851968, 327681, 0, 851969, 327682, 0, 851969, 327683, 0, 851969, 327684, 0, 851969, 327685, 0, 851969, 327686, 0, 851969, 327687, 0, 851969, 327688, 0, 851969, 327689, 0, 851969, 327690, 0, 851969, 327691, 0, 851969, 327692, 0, 851969, 327693, 0, 851969, 327694, 0, 851969, 327695, 0, 851969, 327696, 0, 851969, 327697, 0, 851970, 327698, 0, 1245184, 458751, 0, 1245186, 393216, 0, 851968, 393217, 0, 851969, 393218, 0, 851969, 393219, 0, 851969, 393220, 0, 851969, 393221, 0, 851969, 393222, 0, 851969, 393223, 0, 851969, 393224, 0, 851969, 393225, 0, 851969, 393226, 0, 851969, 393227, 0, 851969, 393228, 0, 851969, 393229, 0, 851969, 393230, 0, 851969, 393231, 0, 851969, 393232, 0, 851969, 393233, 0, 851970, 393234, 0, 1245184, 524287, 0, 1245186, 458752, 0, 851968, 458753, 0, 851969, 458754, 0, 851969, 458755, 0, 851969, 458756, 0, 851969, 458757, 0, 851969, 458758, 0, 851969, 458759, 0, 851969, 458760, 0, 851969, 458761, 0, 851969, 458762, 0, 851969, 458763, 0, 851969, 458764, 0, 851969, 458765, 0, 851969, 458766, 0, 851969, 458767, 0, 851969, 458768, 0, 851969, 458769, 0, 851970, 458770, 0, 1245184, 589823, 0, 1245186, 524288, 0, 851968, 524289, 0, 851969, 524290, 0, 851969, 524291, 0, 851969, 524292, 0, 851969, 524293, 0, 851969, 524294, 0, 851969, 524295, 0, 851969, 524296, 0, 851969, 524297, 0, 851969, 524298, 0, 851969, 524299, 0, 851969, 524300, 0, 851969, 524301, 0, 851969, 524302, 0, 851969, 524303, 0, 851969, 524304, 0, 851969, 524305, 0, 851970, 524306, 0, 1245184, 655359, 0, 1245186, 589824, 0, 851968, 589825, 0, 851969, 589826, 0, 851969, 589827, 0, 851969, 589828, 0, 851969, 589829, 0, 851969, 589830, 0, 851969, 589831, 0, 851969, 589832, 0, 851969, 589833, 0, 851969, 589834, 0, 851969, 589835, 0, 851969, 589836, 0, 851969, 589837, 0, 851969, 589838, 0, 851969, 589839, 0, 851969, 589840, 0, 851969, 589841, 0, 851970, 589842, 0, 1245184, 720895, 0, 1245186, 655360, 0, 851968, 655361, 0, 851969, 655362, 0, 851969, 655363, 0, 851969, 655364, 0, 851969, 655365, 0, 851969, 655366, 0, 851969, 655367, 0, 851969, 655368, 0, 851969, 655369, 0, 851969, 655370, 0, 851969, 655371, 0, 851969, 655372, 0, 851969, 655373, 0, 851969, 655374, 0, 851969, 655375, 0, 851969, 655376, 0, 851969, 655377, 0, 851970, 655378, 0, 1245184, 786431, 0, 1245186, 720896, 0, 851968, 720897, 0, 851969, 720898, 0, 851969, 720899, 0, 851969, 720900, 0, 851969, 720901, 0, 851969, 720902, 0, 851969, 720903, 0, 851969, 720904, 0, 851969, 720905, 0, 851969, 720906, 0, 851969, 720907, 0, 851969, 720908, 0, 851969, 720909, 0, 851969, 720910, 0, 851969, 720911, 0, 851969, 720912, 0, 851969, 720913, 0, 851970, 720914, 0, 1245184, 851967, 0, 1245186, 786432, 0, 917507, 786433, 0, 917505, 786434, 0, 917505, 786435, 0, 917505, 786436, 0, 917505, 786437, 0, 917505, 786438, 0, 917505, 786439, 0, 917505, 786440, 0, 917505, 786441, 0, 917505, 786442, 0, 917505, 786443, 0, 917505, 786444, 0, 917505, 786445, 0, 917505, 786446, 0, 917505, 786447, 0, 917505, 786448, 0, 917505, 786449, 0, 917506, 786450, 0, 1245184, 917503, 0, 1310720, 851968, 0, 1310721, 851969, 0, 1310721, 851970, 0, 1310721, 851971, 0, 1310721, 851972, 0, 1310721, 851973, 0, 1310721, 851974, 0, 1310721, 851975, 0, 1310721, 851976, 0, 1310721, 851977, 0, 1310721, 851978, 0, 1310721, 851979, 0, 1310721, 851980, 0, 1310721, 851981, 0, 1310721, 851982, 0, 1310721, 851983, 0, 1310721, 851984, 0, 1310721, 851985, 0, 1310721, 851986, 0, 1310722 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 70, 70 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="YSort" type="YSort" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 0, -12 )
-texture = ExtResource( 2 )
-hframes = 4
-vframes = 4
-frame = 4
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, -3 )
-rotation = -1.5708
-shape = SubResource( 2 )
+[node name="Walls" type="StaticBody2D" parent="YSort"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-root_node = NodePath("../Sprite")
-anims/IdleDown = SubResource( 20 )
-anims/IdleLeft = SubResource( 19 )
-anims/IdleRight = SubResource( 18 )
-anims/IdleUp = SubResource( 21 )
-anims/RESET = SubResource( 5 )
-anims/WalkDown = SubResource( 9 )
-anims/WalkLeft = SubResource( 7 )
-anims/WalkRight = SubResource( 6 )
-anims/WalkUp = SubResource( 8 )
-
-[node name="AnimationTree" type="AnimationTree" parent="Player"]
-tree_root = SubResource( 3 )
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 4 )
-parameters/Idle/blend_position = Vector2( 0, 0 )
-parameters/Idle/4/playback = SubResource( 27 )
-parameters/Run/blend_position = Vector2( 0, 0 )
-
-[node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Walls"]
 position = Vector2( 8.5, 120 )
 shape = SubResource( 28 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/Walls"]
 position = Vector2( 312, 120 )
 shape = SubResource( 29 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="YSort/Walls"]
 position = Vector2( 160.5, 8 )
 shape = SubResource( 30 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="YSort/Walls"]
 position = Vector2( 160, 231.5 )
 shape = SubResource( 31 )
+
+[node name="Sleeper" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 118, 63 )
