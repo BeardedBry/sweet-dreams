@@ -72,4 +72,10 @@ position = Vector2( 160, 231.5 )
 shape = SubResource( 31 )
 
 [node name="Sleeper" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 118, 63 )
+position = Vector2( 112, 64 )
+
+[node name="Sleeper2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 176, 64 )
+
+[node name="Sleeper3" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 240, 64 )
