@@ -16,6 +16,7 @@ run/main_scene="res://ui/StartScreen.tscn"
 [autoload]
 
 Globals="*res://Globals.gd"
+GlobalsScene="*res://Globals.tscn"
 
 [display]
 

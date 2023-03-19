@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Wallpaper.mp3-8fafef5255ce9a45c69013abddb41f06.mp3str"
+
+[deps]
+
+source_file="res://assets/Wallpaper.mp3"
+dest_files=[ "res://.import/Wallpaper.mp3-8fafef5255ce9a45c69013abddb41f06.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
