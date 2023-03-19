@@ -34,6 +34,10 @@ func wake() -> int:
 
 
 func _update_stage(amount: int) -> void:
+	if _stage == Globals.SleepStage.AWAKE and amount <= 0:
+		return
+	elif _stage == Globals.SleepStage.DEAD:
+		return
 	_stage += amount
 	_sleep_health = max_sleep_health / 2.0
 	if _stage == Globals.SleepStage.AWAKE:
