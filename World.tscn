@@ -54,8 +54,12 @@ tile_data = PoolIntArray( -1, 0, 1179648, -65536, 0, 1179649, -65535, 0, 1179649
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 72, 104 )
 
 [node name="Walls" type="StaticBody2D" parent="YSort"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Walls"]
 position = Vector2( 8.5, 120 )
@@ -74,12 +78,23 @@ position = Vector2( 160, 231.5 )
 shape = SubResource( 31 )
 
 [node name="Sleeper" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 112, 64 )
+position = Vector2( 96, 64 )
 
 [node name="Sleeper2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 176, 64 )
+position = Vector2( 160, 64 )
 sleeper = 1
 
 [node name="Sleeper3" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 240, 64 )
+position = Vector2( 224, 64 )
 sleeper = 2
+
+[node name="Sleeper4" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 96, 128 )
+sleeper = 2
+
+[node name="Sleeper5" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 160, 128 )
+sleeper = 1
+
+[node name="Sleeper6" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 224, 128 )
