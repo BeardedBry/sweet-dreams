@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/guy_extended.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -379,10 +379,6 @@ graph_offset = Vector2( -294.914, 49.089 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=17]
 
-[sub_resource type="CapsuleShape2D" id=37]
-radius = 9.0
-height = 0.0
-
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -421,9 +417,6 @@ parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( -0.00160772, -0.00635839 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BonkSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-
-[node name="AttackCollision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -11 )
-shape = SubResource( 37 )
+volume_db = -20.082

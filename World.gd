@@ -10,7 +10,7 @@ func _ready() -> void:
 	health_progress.value = _health
 	# Timer setup.
 	_increment_timer.connect("timeout", self, "_increment")
-	_increment_timer.wait_time = .1
+	_increment_timer.wait_time = 1.0
 	_increment_timer.one_shot = false
 	add_child(_increment_timer)
 	_increment_timer.start()

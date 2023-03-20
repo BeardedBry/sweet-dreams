@@ -32,7 +32,7 @@ func bonk() -> void:
 		_stage = Globals.SleepStage.DEAD
 		_update_stage(0)
 	_sleep_health -= _damage
-	_damage *= 0.9
+	_damage *= 0.94
 	max_sleep_health += 0.1
 	if _sleep_health <= 0:
 		_update_stage(1)
@@ -49,17 +49,17 @@ func _update_stage(amount: int) -> void:
 	if _stage == Globals.SleepStage.AWAKE and amount <= 0:
 		return
 	elif _stage == Globals.SleepStage.DEAD:
+		_bubble_sprite.frame = 5
 		return
 	_stage += amount
 	_sleep_health = max_sleep_health / 2.0
 	match _stage:
 		Globals.SleepStage.AWAKE:
 			_bubble_sprite.frame = 3
+			_sleep_health = 0.0
 		Globals.SleepStage.LIGHT:
 			_bubble_sprite.frame = 2
 		Globals.SleepStage.MEDIUM:
 			_bubble_sprite.frame = 1
 		Globals.SleepStage.HEAVY:
 			_bubble_sprite.frame = 0
-		Globals.SleepStage.DEAD:
-			_bubble_sprite.frame = 5
